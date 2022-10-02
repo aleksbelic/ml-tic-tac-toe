@@ -1,7 +1,7 @@
 import './App.css';
 import Game from './Game';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <h4>ML Tic-Tac-Toe</h4>
@@ -9,5 +9,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
