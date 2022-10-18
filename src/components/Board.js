@@ -5,23 +5,15 @@ export default function Board(props) {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
   }
 
-  return (
-    <>
-      <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
+  function renderRow(rowIndex) {
+    return (
+      <div className="board-row" key={`row_${rowIndex}`}>
+        {renderSquare(rowIndex * 3)}
+        {renderSquare(rowIndex * 3 + 1)}
+        {renderSquare(rowIndex * 3 + 2)}
       </div>
-      <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
-    </>
-  );
+    );
+  }
+
+  return [...Array(3).keys()].map(rowIndex => renderRow(rowIndex));
 }

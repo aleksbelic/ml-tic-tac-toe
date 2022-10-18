@@ -26,8 +26,8 @@ export default function Game() {
 
   return (
     <div id="game">
-      <Board squares={squares} onClick={i => handleClick(i)} />
       <div>{status}</div>
+      <Board squares={squares} onClick={i => handleClick(i)} />
     </div>
   );
 }
